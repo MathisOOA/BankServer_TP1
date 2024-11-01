@@ -29,8 +29,9 @@ public class ConnexionBanque extends Connexion {
      * @return true la durée d'inactivité est supérieure à delai
      */
     public boolean estInactifDepuis(long delai) {
-        //À définir :
-        throw new NotImplementedException();//ligne à supprimer
+
+        long tempsEcoule=System.currentTimeMillis()-tempsDerniereOperation;
+        return tempsEcoule >= delai;
     }
 
     /**
@@ -43,6 +44,7 @@ public class ConnexionBanque extends Connexion {
     }
 
     /**
+     * Question 1.1 (Mathis Odjo'o Ada)
      * Enregistre le moment de la dernière opération du client utilisant cette connexion.
      *
      * @param tempsDerniereOperation le moment en millisecondes de la dernière opération du client
